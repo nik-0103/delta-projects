@@ -26,13 +26,48 @@ async function getCoordinates(location) {
     ];
 }
 
-
-// Index Route
+// Index route
 module.exports.index = async (req, res) => {
 
-    const allListings = await Listing.find({});
+    const { search } = req.query;
 
-    res.render("listings/index.ejs", { allListings });
+    let allListings;
+
+    if (search && search.trim() !== "") {
+
+        allListings = await Listing.find({
+            $or: [
+                {
+                    title: {
+                        $regex: search,
+                        $options: "i"
+                    }
+                },
+                {
+                    location: {
+                        $regex: search,
+                        $options: "i"
+                    }
+                },
+                {
+                    country: {
+                        $regex: search,
+                        $options: "i"
+                    }
+                }
+            ]
+        });
+
+    } else {
+
+        allListings = await Listing.find({});
+
+    }
+
+    res.render("listings/index.ejs", {
+        allListings,
+        search
+    });
 };
 
 
