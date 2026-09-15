@@ -1,0 +1,178 @@
+body {
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+}
+.navbar {
+    height: 5rem;
+    background-color: white;
+}
+
+.fa-compass {
+    color: #fe244d;
+    font-size: 2 rem;
+}
+
+.nav-link {
+    color: #222222 !important;
+}
+
+/* Footer */
+
+.f-info-links a {
+    text-decoration: none;
+    color: #222222;
+    margin: 0 0.5rem;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+.f-info-links,
+.f-info-socials, .f-info-brand{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.f-info-socials i {
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+.f-info {
+    text-align: center;
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+
+.listing-card {
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.card-text {
+    font-weight: 400;
+}
+
+.listing-link {
+    text-decoration: none;
+}
+
+/* Card Effect */
+
+.card-img-overlay {
+    opacity: 0;
+}
+
+.card-img-overlay:hover {
+    opacity: 0.2;
+    background-color: white;
+}
+
+.add-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+    width: 90px;
+    text-align: center;
+}
+
+/* Show Page */
+/* Show Page */
+
+.show-card {
+    border: none !important;
+}
+
+.show-img {
+    height: 30vh;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1rem !important;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.card-text {
+    font-size: 1rem;
+}
+
+.btns {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.edit-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+.btns .btn-dark {
+    border: none !important;
+}
+
+@media (max-width: 991px) {
+
+    .navbar {
+        background-color: #fff !important;
+        position: sticky;
+        top: 0;
+        z-index: 1050;
+    }
+
+    .navbar-collapse {
+        background-color: #fff;
+        width: 100%;
+        padding: 10px 20px 15px;
+        margin-top: 10px;
+        border-top: 1px solid #ddd;
+    }
+
+    .navbar-nav {
+        background-color: #fff;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 12px 0;
+        font-size: 1.1rem;
+    }
+
+    .navbar-toggler {
+        border: 2px solid #555;
+        border-radius: 10px;
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: none;
+    }
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+    border-radius: 10px;
+}
