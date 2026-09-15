@@ -10,6 +10,11 @@ body {
     flex: 1;
 }
 
+
+/* =========================
+   NAVBAR
+   ========================= */
+
 .navbar {
     height: 5rem;
     background-color: white;
@@ -133,10 +138,6 @@ body {
     border-radius: 1rem !important;
 }
 
-.card-body {
-    padding: 0 !important;
-}
-
 .card-text {
     font-size: 1rem;
 }
@@ -218,7 +219,7 @@ body {
 
     /* =========================
        FILTER BAR
-       AIRBNB STYLE HORIZONTAL SCROLL
+       HORIZONTAL SCROLL
        ========================= */
 
     .filters,
@@ -251,7 +252,7 @@ body {
     }
 
 
-    /* ---------- INDIVIDUAL FILTER ---------- */
+    /* ---------- FILTER ITEM ---------- */
 
     .filter {
         flex: 0 0 auto !important;
@@ -265,6 +266,7 @@ body {
 
         display: flex !important;
         flex-direction: column !important;
+
         align-items: center !important;
         justify-content: flex-start !important;
     }
@@ -287,11 +289,14 @@ body {
 
     /* =========================
        TAX TOGGLE
+       ALWAYS BELOW FILTERS
        ========================= */
 
     .tax-toggle {
+        display: flex !important;
+
         width: fit-content !important;
-        max-width: 90% !important;
+        max-width: 92% !important;
 
         margin: 15px auto 25px auto !important;
 
@@ -299,7 +304,12 @@ body {
 
         font-size: 14px !important;
 
-        white-space: nowrap;
+        white-space: nowrap !important;
+
+        position: static !important;
+        float: none !important;
+
+        clear: both !important;
     }
 
 
@@ -311,7 +321,20 @@ body {
         width: 100% !important;
         max-width: 100% !important;
 
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
         margin-bottom: 1.5rem !important;
+    }
+
+    /*
+       Important:
+       Bootstrap offset-3 was causing
+       mobile content to shift right.
+    */
+
+    .listing-card.offset-3 {
+        margin-left: 0 !important;
     }
 
     .card-img-top {
@@ -342,6 +365,9 @@ body {
     .row {
         margin-left: 0 !important;
         margin-right: 0 !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
     }
 
     .col {
@@ -359,12 +385,29 @@ body {
         max-width: 100% !important;
 
         padding: 0 10px !important;
-        margin: 0 !important;
+
+        margin-left: 0 !important;
+        margin-right: 0 !important;
 
         overflow: hidden;
     }
 
+
+    /* Fix Bootstrap col-6 + offset-3 */
+    .show-card.col-6 {
+        width: 100% !important;
+    }
+
+    .show-card.offset-3 {
+        margin-left: 0 !important;
+    }
+
+
+    /* Show image */
+
     .show-img {
+        display: block;
+
         width: 100% !important;
         max-width: 100% !important;
 
@@ -377,38 +420,56 @@ body {
         border-radius: 1rem !important;
     }
 
+
+    /* Show title */
+
     .show-card h3 {
         font-size: 28px !important;
+
         line-height: 1.2;
 
         word-wrap: break-word;
         overflow-wrap: break-word;
+
+        margin-top: 15px;
     }
+
+
+    /* Show text */
 
     .show-card p {
         font-size: 17px !important;
+
         line-height: 1.5;
 
         word-wrap: break-word;
         overflow-wrap: break-word;
+
+        max-width: 100%;
     }
 
 
     /* =========================
-       SHOW PAGE BOOTSTRAP COLUMN
+       SHOW PAGE CONTENT COLUMNS
        ========================= */
 
-    .show-page .col-8,
-    .show-page .col-md-8,
-    .show-page .col-lg-8,
-    .show-page .offset-3 {
+    .row > .col-12.col-md-8,
+    .row > .col-8,
+    .row > .col-md-8 {
+
         width: 100% !important;
         max-width: 100% !important;
 
         margin-left: 0 !important;
+        margin-right: 0 !important;
 
         padding-left: 12px !important;
         padding-right: 12px !important;
+    }
+
+    .row > .offset-md-2,
+    .row > .offset-3 {
+        margin-left: 0 !important;
     }
 
 
@@ -422,6 +483,9 @@ body {
         flex-wrap: wrap !important;
 
         gap: 10px !important;
+
+        margin-left: 12px;
+        margin-right: 12px;
     }
 
     .btns .btn {
@@ -520,6 +584,9 @@ body {
         font-size: 13px !important;
 
         padding: 10px 14px !important;
+
+        margin-top: 15px !important;
+        margin-bottom: 25px !important;
     }
 
 
@@ -527,6 +594,15 @@ body {
 
     .listing-card {
         width: 100% !important;
+
+        max-width: 100% !important;
+
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .listing-card.offset-3 {
+        margin-left: 0 !important;
     }
 
     .card-img-top {
@@ -546,7 +622,16 @@ body {
 
     .show-card {
         width: 100% !important;
+
+        max-width: 100% !important;
+
         padding: 0 5px !important;
+
+        margin-left: 0 !important;
+    }
+
+    .show-card.offset-3 {
+        margin-left: 0 !important;
     }
 
     .show-card h3 {
@@ -562,7 +647,17 @@ body {
     .show-img {
         width: 100% !important;
 
+        max-width: 100% !important;
+
         border-radius: 14px !important;
+    }
+
+
+    /* ---------- BUTTONS ---------- */
+
+    .btns {
+        margin-left: 5px;
+        margin-right: 5px;
     }
 
 
