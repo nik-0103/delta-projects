@@ -1,8 +1,11 @@
 <% layout("/layouts/boilerplate") %>
 
+<div class="container show-page">
+
     <div class="row mt-3">
 
-        <div class="col-8 offset-3">
+        <!-- Listing Title -->
+        <div class="col-12 col-md-8 offset-md-2">
             <h3>
                 <b>
                     <%= listing.title %>
@@ -12,65 +15,80 @@
 
 
         <!-- Listing Card -->
-        <div class="card col-6 offset-3 show-card listing-card">
+        <div class="col-12 col-md-8 offset-md-2">
+            
+            <div class="card show-card listing-card">
 
-            <img src="<%= listing.image.url %>" class="card-img-top show-img" alt="listing_image" />
+                <img
+                    src="<%= listing.image.url %>"
+                    class="card-img-top show-img"
+                    alt="listing_image"
+                />
 
-            <div class="card-body">
+                <div class="card-body">
 
-                <!-- Owner -->
-                <p class="card-text">
-                    Owned by
-                    <i>
-                        <%= listing.owner.username %>
-                    </i>
-                </p>
+                    <!-- Owner -->
+                    <p class="card-text">
+                        Owned by
+                        <i>
+                            <%= listing.owner.username %>
+                        </i>
+                    </p>
 
-                <!-- Description -->
-                <p class="card-text">
-                    <%= listing.description %>
-                </p>
+                    <!-- Description -->
+                    <p class="card-text">
+                        <%= listing.description %>
+                    </p>
 
-                <!-- Price -->
-                <p class="card-text">
-                    &#8377;
-                    <%= listing.price.toLocaleString("en-IN") %>
-                </p>
+                    <!-- Price -->
+                    <p class="card-text">
+                        &#8377;
+                        <%= listing.price.toLocaleString("en-IN") %>
+                    </p>
 
-                <!-- Location -->
-                <p class="card-text">
-                    <%= listing.location %>
-                </p>
+                    <!-- Location -->
+                    <p class="card-text">
+                        <%= listing.location %>
+                    </p>
 
-                <!-- Country -->
-                <p class="card-text">
-                    <%= listing.country %>
-                </p>
+                    <!-- Country -->
+                    <p class="card-text">
+                        <%= listing.country %>
+                    </p>
+
+                </div>
 
             </div>
+
         </div>
 
 
         <!-- Edit & Delete Buttons -->
         <% if (currUser && listing.owner._id.equals(currUser._id)) { %>
 
-            <div class="btns">
+            <div class="col-12 col-md-8 offset-md-2">
 
-                <!-- Edit -->
-                <a href="/listings/<%= listing._id %>/edit"
-                    class="btn btn-dark col-1 offset-3 edit-btn">
-                    Edit
-                </a>
+                <div class="btns">
 
-                <!-- Delete -->
-                <form method="POST"
-                    action="/listings/<%= listing._id %>?_method=DELETE">
+                    <!-- Edit -->
+                    <a
+                        href="/listings/<%= listing._id %>/edit"
+                        class="btn btn-dark edit-btn"
+                    >
+                        Edit
+                    </a>
 
-                    <button class="btn btn-dark offset-5">
-                        Delete
-                    </button>
+                    <!-- Delete -->
+                    <form
+                        method="POST"
+                        action="/listings/<%= listing._id %>?_method=DELETE"
+                    >
+                        <button class="btn btn-dark">
+                            Delete
+                        </button>
+                    </form>
 
-                </form>
+                </div>
 
             </div>
 
@@ -80,16 +98,18 @@
         <!-- Leave a Review -->
         <% if (currUser) { %>
 
-            <div class="col-8 offset-3 mb-3">
+            <div class="col-12 col-md-8 offset-md-2 mb-3">
 
                 <hr />
 
                 <h4>Leave a Review</h4>
 
-                <form action="/listings/<%= listing._id %>/reviews"
+                <form
+                    action="/listings/<%= listing._id %>/reviews"
                     method="POST"
                     class="needs-validation"
-                    novalidate>
+                    novalidate
+                >
 
                     <!-- Rating -->
                     <div class="mb-3 mt-3">
@@ -100,61 +120,83 @@
 
                         <fieldset class="starability-slot">
 
-                            <input type="radio"
+                            <input
+                                type="radio"
                                 id="no-rate"
                                 class="input-no-rate"
                                 name="review[rating]"
                                 value="0"
                                 checked
-                                aria-label="No rating." />
+                                aria-label="No rating."
+                            />
 
-                            <input type="radio"
+                            <input
+                                type="radio"
                                 id="first-rate1"
                                 name="review[rating]"
-                                value="1" />
+                                value="1"
+                            />
 
-                            <label for="first-rate1"
-                                title="Terrible">
+                            <label
+                                for="first-rate1"
+                                title="Terrible"
+                            >
                                 1 star
                             </label>
 
-                            <input type="radio"
+                            <input
+                                type="radio"
                                 id="first-rate2"
                                 name="review[rating]"
-                                value="2" />
+                                value="2"
+                            />
 
-                            <label for="first-rate2"
-                                title="Not good">
+                            <label
+                                for="first-rate2"
+                                title="Not good"
+                            >
                                 2 stars
                             </label>
 
-                            <input type="radio"
+                            <input
+                                type="radio"
                                 id="first-rate3"
                                 name="review[rating]"
-                                value="3" />
+                                value="3"
+                            />
 
-                            <label for="first-rate3"
-                                title="Average">
+                            <label
+                                for="first-rate3"
+                                title="Average"
+                            >
                                 3 stars
                             </label>
 
-                            <input type="radio"
+                            <input
+                                type="radio"
                                 id="first-rate4"
                                 name="review[rating]"
-                                value="4" />
+                                value="4"
+                            />
 
-                            <label for="first-rate4"
-                                title="Very good">
+                            <label
+                                for="first-rate4"
+                                title="Very good"
+                            >
                                 4 stars
                             </label>
 
-                            <input type="radio"
+                            <input
+                                type="radio"
                                 id="first-rate5"
                                 name="review[rating]"
-                                value="5" />
+                                value="5"
+                            />
 
-                            <label for="first-rate5"
-                                title="Amazing">
+                            <label
+                                for="first-rate5"
+                                title="Amazing"
+                            >
                                 5 stars
                             </label>
 
@@ -166,17 +208,20 @@
                     <!-- Comment -->
                     <div class="mb-3 mt-3">
 
-                        <label for="comment" class="form-label">
+                        <label
+                            for="comment"
+                            class="form-label"
+                        >
                             Comments
                         </label>
 
                         <textarea
                             name="review[comment]"
                             id="comment"
-                            cols="30"
                             rows="5"
                             class="form-control"
-                            required></textarea>
+                            required
+                        ></textarea>
 
                         <div class="invalid-feedback">
                             Please add some comments for review.
@@ -186,8 +231,10 @@
 
 
                     <!-- Submit -->
-                    <button type="submit"
-                        class="btn btn-outline-dark">
+                    <button
+                        type="submit"
+                        class="btn btn-outline-dark"
+                    >
                         Submit
                     </button>
 
@@ -201,7 +248,7 @@
         <!-- All Reviews -->
         <% if (listing.reviews.length > 0) { %>
 
-            <div class="col-8 offset-3 mb-3">
+            <div class="col-12 col-md-8 offset-md-2 mb-3">
 
                 <hr />
 
@@ -213,39 +260,49 @@
 
                     <% for (review of listing.reviews) { %>
 
-                        <div class="card col-5 ms-3 mb-3">
+                        <div class="col-12 col-md-6 mb-3">
 
-                            <div class="card-body">
+                            <div class="card h-100">
 
-                                <!-- Review Author -->
-                                <h5 class="card-title">
-                                    <%= review.author.username %>
-                                </h5>
+                                <div class="card-body">
 
-                                <!-- Review Rating -->
-                                <p class="starability-result card-text"
-                                    data-rating="<%= review.rating %>">
-                                </p>
+                                    <!-- Review Author -->
+                                    <h5 class="card-title">
+                                        <%= review.author.username %>
+                                    </h5>
 
-                                <!-- Review Comment -->
-                                <p class="card-text">
-                                    <%= review.comment %>
-                                </p>
+                                    <!-- Review Rating -->
+                                    <p
+                                        class="starability-result card-text"
+                                        data-rating="<%= review.rating %>"
+                                    ></p>
 
-                                <!-- Delete Review -->
-                                <% if (currUser && review.author._id.equals(currUser._id)) { %>
+                                    <!-- Review Comment -->
+                                    <p class="card-text">
+                                        <%= review.comment %>
+                                    </p>
 
-                                    <form class="mb-3"
-                                        method="POST"
-                                        action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE">
 
-                                        <button class="btn btn-sm btn-dark">
-                                            Delete
-                                        </button>
+                                    <!-- Delete Review -->
+                                    <% if (currUser && review.author._id.equals(currUser._id)) { %>
 
-                                    </form>
+                                        <form
+                                            class="mb-3"
+                                            method="POST"
+                                            action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE"
+                                        >
 
-                                <% } %>
+                                            <button
+                                                class="btn btn-sm btn-dark"
+                                            >
+                                                Delete
+                                            </button>
+
+                                        </form>
+
+                                    <% } %>
+
+                                </div>
 
                             </div>
 
@@ -261,7 +318,7 @@
 
 
         <!-- Map -->
-        <div class="col-8 offset-3 mb-3">
+        <div class="col-12 col-md-8 offset-md-2 mb-3">
 
             <hr />
 
@@ -273,40 +330,46 @@
 
     </div>
 
-
-    <!-- Leaflet Map -->
-    <script>
-
-        // Get coordinates from MongoDB
-        const coordinates = <%- JSON.stringify(listing.geometry.coordinates) %>;
-
-        // GeoJSON stores coordinates as [longitude, latitude]
-        // Leaflet uses [latitude, longitude]
-        const mapCoordinates = [
-            coordinates[1],
-            coordinates[0]
-        ];
-
-        // Create Map
-        const map = L.map("map").setView(mapCoordinates, 10);
+</div>
 
 
-        // OpenStreetMap Layer
-        L.tileLayer(
-            "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-            {
-                maxZoom: 19,
-                attribution: "&copy; OpenStreetMap contributors"
-            }
-        ).addTo(map);
+<!-- Leaflet Map -->
+<script>
+
+    // Get coordinates from MongoDB
+    const coordinates =
+        <%- JSON.stringify(listing.geometry.coordinates) %>;
+
+    // GeoJSON stores coordinates as [longitude, latitude]
+    // Leaflet uses [latitude, longitude]
+    const mapCoordinates = [
+        coordinates[1],
+        coordinates[0]
+    ];
+
+    // Create Map
+    const map = L.map("map").setView(
+        mapCoordinates,
+        10
+    );
 
 
-        // Marker
-        L.marker(mapCoordinates)
-            .addTo(map)
-            .bindPopup(
-                "<b><%= listing.location %></b>"
-            )
-            .openPopup();
+    // OpenStreetMap Layer
+    L.tileLayer(
+        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+        {
+            maxZoom: 19,
+            attribution: "&copy; OpenStreetMap contributors"
+        }
+    ).addTo(map);
 
-    </script>
+
+    // Marker
+    L.marker(mapCoordinates)
+        .addTo(map)
+        .bindPopup(
+            "<b><%= listing.location %></b>"
+        )
+        .openPopup();
+
+</script>
