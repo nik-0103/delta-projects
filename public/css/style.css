@@ -8,6 +8,7 @@ body {
 .container {
     flex: 1;
 }
+
 .navbar {
     height: 5rem;
     background-color: white;
@@ -15,14 +16,17 @@ body {
 
 .fa-compass {
     color: #fe244d;
-    font-size: 2 rem;
+    font-size: 2rem;
 }
 
 .nav-link {
     color: #222222 !important;
 }
 
-/* Footer */
+
+/* =========================
+   FOOTER
+   ========================= */
 
 .f-info-links a {
     text-decoration: none;
@@ -35,7 +39,8 @@ body {
 }
 
 .f-info-links,
-.f-info-socials, .f-info-brand{
+.f-info-socials,
+.f-info-brand {
     width: 100%;
     display: flex;
     align-items: center;
@@ -56,6 +61,11 @@ body {
     justify-content: center;
     align-items: space-evenly;
 }
+
+
+/* =========================
+   LISTING CARDS
+   ========================= */
 
 .listing-card {
     border: none !important;
@@ -80,7 +90,10 @@ body {
     text-decoration: none;
 }
 
-/* Card Effect */
+
+/* =========================
+   CARD EFFECT
+   ========================= */
 
 .card-img-overlay {
     opacity: 0;
@@ -91,6 +104,11 @@ body {
     background-color: white;
 }
 
+
+/* =========================
+   BUTTONS
+   ========================= */
+
 .add-btn {
     background-color: #fe424d !important;
     border: none !important;
@@ -98,8 +116,10 @@ body {
     text-align: center;
 }
 
-/* Show Page */
-/* Show Page */
+
+/* =========================
+   SHOW PAGE
+   ========================= */
 
 .show-card {
     border: none !important;
@@ -134,6 +154,11 @@ body {
 .btns .btn-dark {
     border: none !important;
 }
+
+
+/* =========================
+   NAVBAR - TABLET & MOBILE
+   ========================= */
 
 @media (max-width: 991px) {
 
@@ -170,6 +195,286 @@ body {
         box-shadow: none;
     }
 }
+
+
+/* =========================
+   MOBILE RESPONSIVE
+   ========================= */
+
+@media (max-width: 768px) {
+
+    /* ---------- NAVBAR ---------- */
+
+    .navbar {
+        height: auto;
+        min-height: 5rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+
+    /* ---------- FILTER BAR ---------- */
+
+    .filters {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 28px;
+
+        width: 100%;
+        padding: 15px 20px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    /* Chrome, Safari */
+    .filters::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filter {
+        flex: 0 0 auto;
+        min-width: 65px;
+        text-align: center;
+        margin: 0;
+    }
+
+    .filter p {
+        white-space: nowrap;
+        font-size: 13px;
+        margin-top: 5px;
+    }
+
+
+    /* ---------- TAX TOGGLE ---------- */
+
+    .tax-toggle {
+        width: fit-content;
+        max-width: 90%;
+        margin: 10px auto 20px auto;
+        padding: 12px 18px;
+        font-size: 14px;
+    }
+
+
+    /* ---------- LISTING GRID ---------- */
+
+    .listing-card {
+        width: 100% !important;
+        margin-bottom: 1.5rem;
+    }
+
+    .card-img-top {
+        width: 100% !important;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        object-fit: cover !important;
+        border-radius: 1rem !important;
+    }
+
+    .card-text {
+        font-size: 15px;
+    }
+
+    .listing-card .card-title {
+        font-size: 17px;
+    }
+
+
+    /* ---------- BOOTSTRAP ROW ---------- */
+
+    .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .col {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
+
+    /* ---------- SHOW PAGE ---------- */
+
+    .show-card {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .show-img {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 500px;
+        object-fit: cover;
+        border-radius: 1rem !important;
+    }
+
+    .show-card h3 {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+    .show-card p {
+        font-size: 17px;
+        line-height: 1.5;
+    }
+
+
+    /* ---------- SHOW PAGE BUTTONS ---------- */
+
+    .btns {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .btns .btn {
+        min-width: 90px;
+    }
+
+
+    /* ---------- MAP ---------- */
+
+    #map {
+        width: 100% !important;
+        height: 300px;
+        border-radius: 10px;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    .f-info {
+        min-height: 180px;
+        height: auto;
+        padding: 25px 10px;
+        text-align: center;
+    }
+
+    .f-info-socials {
+        margin-bottom: 15px;
+    }
+
+    .f-info-links {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .f-info-links a {
+        margin: 0 5px;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+   ========================= */
+
+@media (max-width: 480px) {
+
+    /* ---------- NAVBAR ---------- */
+
+    .navbar {
+        min-height: 4.5rem;
+        padding: 0.5rem 0.8rem !important;
+    }
+
+
+    /* ---------- FILTERS ---------- */
+
+    .filters {
+        gap: 25px;
+        padding: 15px 20px;
+    }
+
+    .filter {
+        min-width: 65px;
+    }
+
+    .filter p {
+        font-size: 12px;
+    }
+
+
+    /* ---------- TAX TOGGLE ---------- */
+
+    .tax-toggle {
+        font-size: 13px;
+        padding: 10px 14px;
+    }
+
+
+    /* ---------- LISTING CARD ---------- */
+
+    .listing-card {
+        width: 100% !important;
+    }
+
+    .card-img-top {
+        border-radius: 14px !important;
+    }
+
+    .listing-card .card-title {
+        font-size: 16px;
+    }
+
+    .card-text {
+        font-size: 14px;
+    }
+
+
+    /* ---------- SHOW PAGE ---------- */
+
+    .show-card {
+        padding: 0 5px;
+    }
+
+    .show-card h3 {
+        font-size: 25px;
+    }
+
+    .show-card p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .show-img {
+        border-radius: 14px !important;
+    }
+
+
+    /* ---------- MAP ---------- */
+
+    #map {
+        height: 280px;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    .f-info {
+        min-height: 170px;
+        padding: 20px 8px;
+    }
+
+    .f-info-socials i {
+        font-size: 20px;
+        margin-right: 12px;
+    }
+}
+
+
+/* =========================
+   MAP
+   ========================= */
 
 #map {
     height: 400px;
